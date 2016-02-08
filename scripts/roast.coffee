@@ -12,10 +12,18 @@ module.exports = (robot) ->
     robot.hear /roast (.*)/i, (res) ->
         User = res.match[1]
         TheInsult = res.random Insults
-
-        if TheInsult == Insults[5]
-            res.send " "+TheInsult+"@"+User+TheUltimateRoastp2
-        else if TheInsult == Insults[7]
-            res.send " "+TheInsult+"@"+User+TheUltimateRoastp3
+        if "@" in User
+                if TheInsult == Insults[5]
+                    res.send " "+TheInsult+""+User+TheUltimateRoastp2
+                else if TheInsult == Insults[7]
+                    res.send " "+TheInsult+""+User+TheUltimateRoastp3
+                else
+                    res.send ""+User+" "+TheInsult
         else
-            res.send "@"+User+" "+TheInsult
+
+                if TheInsult == Insults[5]
+                    res.send " "+TheInsult+"@"+User+TheUltimateRoastp2
+                else if TheInsult == Insults[7]
+                    res.send " "+TheInsult+"@"+User+TheUltimateRoastp3
+                else
+                    res.send "@"+User+" "+TheInsult
