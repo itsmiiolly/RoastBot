@@ -1,9 +1,9 @@
 {
-  "name": "fucking",
-  "version": "0.0.0",
+  "name": "RoastBot",
+  "version": "1.0.0",
   "private": true,
   "author": "wizardsambolton <sam99bolton@gmail.com>",
-  "description": "An evil sod",
+  "description": "An evil robot who just loves to roast.",
   "dependencies": {
     "hubot": "^2.18.0",
     "hubot-diagnostics": "0.0.1",
