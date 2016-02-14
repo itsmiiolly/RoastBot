@@ -1,4 +1,4 @@
-insults = ["<USER> Your momas so fat she apears on radar",
+insults = ["<USER> Your moma's so fat she appears on radar",
            "<USER> wipe your mouth. There's still a tiny bit of bullshit around your lips. ",
            "<USER> if you have something to say, raise your hand and place it over your mouth.",
            "<USER> yo' Mama is so stanky, when she walks by, trash plugs its nose.",
