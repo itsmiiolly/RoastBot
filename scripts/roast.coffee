@@ -15,7 +15,11 @@ insults = ["<USER> Your momas so fat she apears on radar",
            "<USER> yo Momma's so dumb, she bought tickets to Xbox Live.",
            "<USER> it looks like your face caught on fire and someone tried to put it out with a fork.",
            "<USER> don't feel bad. A lot of people have no talent.",
-           "<USER> your birth certificate is an apology letter to your parents from the hospital."]
+           "<USER> your birth certificate is an apology letter to your parents from the condom factory",
+           "What’s the difference between <USER> and eggs? Eggs get laid and you don't.",
+           "<USER> I'm not saying I hate you, but I would unplug your life support to charge my phone.",
+           "<USER> I bet your brain feels as good as new, seeing that you never use it.",
+           "<USER> Your family tree must be a cactus because everybody on it is a prick."]
 
 module.exports = (robot) ->
     robot.hear /roast (.*)/i, (res) ->
