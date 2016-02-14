@@ -1,57 +1,25 @@
-insults = ["Your momas so fat she apears on radar",
-"wipe your mouth. There's still a tiny bit of bullshit around your lips. ",
-"if you have something to say, raise your hand and place it over your mouth.",
-"yo' Mama is so stanky, when she walks by, trash plugs its nose.",
-"yo' Mama is so poor, she goes to Kentucky Fried Chicken to lick other people's fingers.",
-"I'm trying to see things from ",
-"yo' Mama is so fat, her stomach gets home 30 minutes before she does.",
-"What's the difference between ",
-"I was just looking at you, I can’t help but wonder... Was anyone else hurt in the accident?",
-"you’re pretty as a picture. I guess that explains why everyone wants to hang you.",
-"being ugly is no crime. Good thing too, otherwise you’d be in prison.",
-"is a very influential person. I can’t tell you how many people try to emulate this person...at Halloween.",
-"-( ͡° ͜ʖ ͡°)╯╲___卐卐卐卐 don't mind me just taking "]
-
-insultConcatenate = "'s point of view, but I can't get my head that far up my ass."
-insultConcatenateTwo = " and an ironing board?...An ironing board's legs are hard to open"
-insultConcatenateThree = "'s family for a walk"
+insults = ["<USER> Your momas so fat she apears on radar",
+           "<USER> wipe your mouth. There's still a tiny bit of bullshit around your lips. ",
+           "<USER> if you have something to say, raise your hand and place it over your mouth.",
+           "<USER> yo' Mama is so stanky, when she walks by, trash plugs its nose.",
+           "<USER> yo' Mama is so poor, she goes to Kentucky Fried Chicken to lick other people's fingers.",
+           "I'm trying to see things from <USER> but I can't get my head that far up my arse",
+           "<USER> yo' Mama is so fat, her stomach gets home 30 minutes before she does.",
+           "What's the difference between <USER> and an ironing board?...An ironing board's legs are hard to open",
+           "<USER> I was just looking at you, I can’t help but wonder... Was anyone else hurt in the accident?",
+           "<USER> you’re pretty as a picture. I guess that explains why everyone wants to hang you.",
+           "<USER> being ugly is no crime. Good thing too, otherwise you’d be in prison.",
+           "<USER> is a very influential person. I can’t tell you how many people dress up as this person at Halloween.",
+           "-( ͡° ͜ʖ ͡°)╯╲___卐卐卐卐 don't mind me just taking <USER>'s family for a walk.",
+           "<USER> are you always this stupid, or is today a special occasion?",
+           "<USER> yo Momma's so dumb, she bought tickets to Xbox Live.",
+           "<USER> it looks like your face caught on fire and someone tried to put it out with a fork.",
+           "<USER> don't feel bad. A lot of people have no talent.",
+           "<USER> your birth certificate is an apology letter to your parents from the hospital."]
 
 module.exports = (robot) ->
     robot.hear /roast (.*)/i, (res) ->
-        User = res.match[1]
-
-        insultMessage = res.random insults
-        if "@" in User
-            if insultMessage == insults[5]
-                res.send " "+insultMessage+""+User+insultConcatenate
-            else if insultMessage == insults[7]
-                res.send " "+insultMessage+""+User+insultConcatenateTwo
-            else if insultMessage == insults[12]
-                res.send ""+insultMessage+""+User+insultConcatenateThree
-            else if insultMessage == insults[8]
-                res.send ""+User+" "+insultMessage
-            else if insultMessage == insults[9]
-                res.send ""+User+" "+insultMessage
-            else if insultMessage == insults[10]
-                res.send ""+User+" "+insultMessage
-            else if insultMessage == insults[11]
-                res.send ""+User+" "+insultMessage
-            else
-                res.send ""+User+" "+insultMessage
-        else
-            if insultMessage == insults[5]
-                res.send " "+insultMessage+"@"+User+insultConcatenate
-            else if insultMessage == insults[7]
-                res.send " "+insultMessage+"@"+User+insultConcatenateTwo
-            else if insultMessage == insults[12]
-                res.send ""+insultMessage+"@"+User+insultConcatenateThree
-            else if insultMessage == insults[8]
-                res.send "@"+User+" "+insultMessage
-            else if insultMessage == insults[9]
-                res.send "@"+User+" "+insultMessage
-            else if insultMessage == insults[10]
-                res.send "@"+User+" "+insultMessage
-            else if insultMessage == insults[11]
-                res.send "@"+User+" "+insultMessage
-            else
-                res.send "@"+User+" "+insultMessage
+        user = res.match[1].toLowerCase()
+        if "@" not in user
+            user = "@#{user}"
+        res.respond insults[Math.floor(Math.random()*insults.length)].replace "<USER>", user
